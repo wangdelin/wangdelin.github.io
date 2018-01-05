@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: wdl@wangdelin.com
 description: "个人博客"
 keyword: "python linux jenkins python git docker 测试开发 持续集成 自动化测试"
-url: "https://wangdelin.github.io"              # your host, for absolute URL
+url: "https://wangdelin.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
