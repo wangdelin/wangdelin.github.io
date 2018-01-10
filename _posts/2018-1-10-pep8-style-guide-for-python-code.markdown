@@ -13,27 +13,71 @@ tags:
 
 # 代码布局
 
-## 缩进
+1. 缩进
 
-## Tabs or Spaces?
+每个缩进级使用4个空格.
 
-## 最大行长度
+Yes:
 
-## 是否应该在二元操作符前或后换行?
+{% highlight python %}
+# Aligned with opening delimiter.
+foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
 
-## 空白行
+# More indentation included to distinguish this from the rest.
+def long_function_name(
+        var_one, var_two, var_three,
+        var_four):
+    print(var_one)
 
-## 源文件编码
+# Hanging indents should add a level.
+foo = long_function_name(
+    var_one, var_two,
+    var_three, var_four)
+{% endhighlight %}
 
-## 导入
+No:
 
-## 模块级dunder名称
+{% highlight python %}
+# Arguments on first line forbidden when not using vertical alignment.
+foo = long_function_name(var_one, var_two,
+    var_three, var_four)
+
+# Further indentation required as indentation is not distinguishable.
+def long_function_name(
+    var_one, var_two, var_three,
+    var_four):
+    print(var_one)
+{% endhighlight %}
+
+Optional:
+
+{% highlight python %}
+# Hanging indents *may* be indented to other than 4 spaces.
+foo = long_function_name(
+  var_one, var_two,
+  var_three, var_four)
+{% endhighlight %}
+
+2. Tabs or Spaces?
+
+3. 最大行长度
+
+4. 是否应该在二元操作符前或后换行?
+
+5. 空白行
+
+6. 源文件编码
+
+7. 导入
+
+8. 模块级dunder名称
 
 # 字符串引用
 
-## Pet Peeves
+1. Pet Peeves
 
-## 其他建议
+2. 其他建议
 
 # 表达式和语句中的空白
 
@@ -41,22 +85,22 @@ tags:
 
 # 注释
 
-## 块注释
+1. 块注释
 
-## 行内注释
+2. 行内注释
 
-## 文档字符串
+3. 文档字符串
 
 # 命名约定
 
-## 压倒一切的原则
+1. 压倒一切的原则
 
-## 描述: 命名样式
+2. 描述: 命名样式
 
-## 规范性: 命名约定
+3. 规范性: 命名约定
 
-## 公共和内部接口
+4. 公共和内部接口
 
 # 编程建议
 
-## 函数注释
+1. 函数注释
