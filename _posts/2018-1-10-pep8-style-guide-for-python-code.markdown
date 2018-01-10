@@ -7,59 +7,94 @@ tags:
     - python
 ---
 
-> 
->
->
+> 优雅的python
 
 # 代码布局
 
 1. 缩进
-
 每个缩进级使用4个空格.
 
 Yes:
-
-{% highlight python %}
-# Aligned with opening delimiter.
+```python
+# 与打开的分隔符对齐
 foo = long_function_name(var_one, var_two,
                          var_three, var_four)
 
-# More indentation included to distinguish this from the rest.
+# 使用更多的缩进与其他区分开
 def long_function_name(
         var_one, var_two, var_three,
         var_four):
     print(var_one)
 
-# Hanging indents should add a level.
 foo = long_function_name(
     var_one, var_two,
     var_three, var_four)
-{% endhighlight %}
+```
 
 No:
 
-{% highlight python %}
-# Arguments on first line forbidden when not using vertical alignment.
+```python
+# 在不使用垂直对齐时,禁止在第一行写参数
 foo = long_function_name(var_one, var_two,
     var_three, var_four)
 
-# Further indentation required as indentation is not distinguishable.
 def long_function_name(
     var_one, var_two, var_three,
     var_four):
     print(var_one)
-{% endhighlight %}
+```
 
 Optional:
 
-{% highlight python %}
-# Hanging indents *may* be indented to other than 4 spaces.
+```python
 foo = long_function_name(
   var_one, var_two,
   var_three, var_four)
-{% endhighlight %}
+```
+
+```python
+if (this_is_one_thing and
+    that_is_another_thing):
+    do_something()
+
+if (this_is_one_thing and
+    that_is_another_thing):
+    # Since both conditions are true, we can frobnicate.
+    do_something()
+
+if (this_is_one_thing
+        and that_is_another_thing):
+    do_something()
+```
+
+```
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+    ]
+result = some_function_that_takes_arguments(
+    'a', 'b', 'c',
+    'd', 'e', 'f',
+    )
+
+# 或者
+
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+]
+result = some_function_that_takes_arguments(
+    'a', 'b', 'c',
+    'd', 'e', 'f',
+)
+```
 
 2. Tabs or Spaces?
+- 空格是首选缩进方法.
+- tab仅用于与已用tab缩进的代码保持一致.
+- python 3不允许混合使用tab和空格进行缩进.
+- 使用tab和空格混合方式缩进的python 2代码, 应转换为使用空格.
+- 当使用-t选项调用python 2命令行解释器时, 它会发出关于非法混合使用tab和空格的警告.当使用tt选项时, 这些警告会变成错误.强烈建议使用这些选项.
 
 3. 最大行长度
 
