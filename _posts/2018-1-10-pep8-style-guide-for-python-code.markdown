@@ -33,7 +33,6 @@ foo = long_function_name(
 ```
 
 No:
-
 ```python
 # 在不使用垂直对齐时,禁止在第一行写参数
 foo = long_function_name(var_one, var_two,
@@ -46,7 +45,6 @@ def long_function_name(
 ```
 
 Optional:
-
 ```python
 foo = long_function_name(
   var_one, var_two,
@@ -112,7 +110,7 @@ result = some_function_that_takes_arguments(
 
 ### 7 导入
 
-* 导入应该放在独立的行
+> 导入应该放在独立的行
 
 Yes:
 ```python
@@ -126,7 +124,7 @@ No:
 import sys, os
 ```
 
-* 导入应该放在文件的顶端，放在模块注释和文档字符串之后，模块全集变量和常量之前。
+> 导入应该放在文件的顶端，放在模块注释和文档字符串之后，模块全集变量和常量之前。
 
 应该按照以下顺序分组导入:
 
@@ -136,7 +134,7 @@ import sys, os
 
 每组之间应该放置一个空行。
 
-* 建议绝对导入，因为它们通常更容易阅读。如果导入系统配置不正确（例如， 当包中的一个目录在**sys.path**的结尾），它们往往表现更好（或者至少给出更好的错误信息）。
+> 建议绝对导入，因为它们通常更容易阅读。如果导入系统配置不正确（例如， 当包中的一个目录在**sys.path**的结尾），它们往往表现更好（或者至少给出更好的错误信息）。
 
 ```python
 import mypkg.sibling
@@ -155,7 +153,7 @@ from .silbing import example
 
 不应使用隐式相对导入, 并且已在 Python 3 中删除。
 
-* 当从包含类的模块导入类时，通常可以这样拼写:
+> 当从包含类的模块导入类时，通常可以这样拼写:
 
 ```python
 from myclass import MyClass
@@ -171,7 +169,7 @@ import foo.bar.yourclass
 
 然后使用`myclass.MyClass` 和 `foo.bar.yourclass.YourClass`。
 
-* 应避免通配符导入(`from <module> import *`), 因为它们使得命名空间中存在哪些名称(names)不清楚， 这会使得读者或者许多自动化工具混淆。通配符导入有一个可辨的使用案例是，重新发布一个内部接口作为公共API的一部分。
+> 应避免通配符导入(`from <module> import *`), 因为它们使得命名空间中存在哪些名称(names)不清楚， 这会使得读者或者许多自动化工具混淆。通配符导入有一个可辨的使用案例是，重新发布一个内部接口作为公共API的一部分。
 
 当以这种方式重新发布名称(names)时，下面有关公共和内部接口的准则仍然适用。
 
@@ -180,7 +178,6 @@ import foo.bar.yourclass
 模块级 "dunders" （即名称有两个前导和两个尾随下划线）例如 `__all__`, `__author__`, `__version__` 等等。应该放在除了`from __future__`导入之外的任何导入语句之前且模块文档字符串(docstrings)之后。python 要求 futrue导出必须出现在模块除了文档字符串(docstrings)之外的任意代码之前。
 
 例如:
-
 ```python
 """This is the example module.
 
@@ -201,9 +198,7 @@ import sys
 
 ### 1 Pet Peeves
 
-
 ### 2 其他建议
-
 
 # 表达式和语句中的空白
 
@@ -213,9 +208,9 @@ import sys
 
 ### 1 块注释
 
-###2 行内注释
+### 2 行内注释
 
-###3 文档字符串
+### 3 文档字符串
 
 # 命名约定
 
