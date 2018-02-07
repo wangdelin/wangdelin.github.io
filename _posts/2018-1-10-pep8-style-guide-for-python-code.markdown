@@ -207,33 +207,43 @@ import sys
 在下列情况下避免多余的空白:
 
 + 括号，方括号，大括号内部紧接的地方。
-```
-# Yes
-spam(ham[1], {eggs: 2})
 
-# No
+Yes
+```
+spam(ham[1], {eggs: 2})
+```
+No
+```
 spam( ham[ 1 ], { eggs: 2 } )
 ```
 
-+ 介于尾随逗号和右括号之间。
-```
-# Yes
-foo = (0,)
++ 介于尾随逗号和右括号之间。'
 
-# No
+Yes
+```
+foo = (0,)
+```
+
+No
+```
 bar = (0, )
 ```
 
 + 紧接在逗号、分号或冒号之前。
-```
-# Yes
-if x == 4: print x, y; x, y = y, x
 
-# No
+Yes
+```
+if x == 4: print x, y; x, y = y, x
+```
+
+No
+```
 if x == 4 : print x , y ; x , y = y , x
 ```
 
 + 然而, 在分片中冒号的作用类似于二元操作符，并且逗号两边应该有相等的数量（将其作为具有最低优先级的操作符）.在扩展分片中，两个冒号都必须提供相同数量的空白。例外: 当一个分片参数省略，空白也应省略。
+
+Yes
 ```
 # Yes
 ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
@@ -241,8 +251,10 @@ ham[lower:upper], ham[lower:upper:], ham[lower::step]
 ham[lower+offset : upper+offset]
 ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
 ham[lower + offset : upper + offset]
+```
 
-# No
+No
+```
 ham[lower + offset:upper + offset]
 ham[1: 9], ham[1 :9], ham[1:9 :3]
 ham[lower : : upper]
@@ -250,31 +262,40 @@ ham[ : upper]
 ```
 
 + 紧接在开始函数调用的参数列表的左括号之前。
-```
-# Yes
-spam(1)
 
-# No
+Yes
+```
+spam(1)
+```
+
+No
+```
 spam (1)
 ```
 
 + 紧接在开始索引或切片的左括号之前。
-```
-# Yes
-dct['key'] = lst[index]
 
-# No
+Yes
+```
+dct['key'] = lst[index]
+```
+
+No
+```
 dct ['key'] = lst [index]
 ```
 
 + 在赋值(或其他)运算符周围有多个空白, 以使其与另一个运算符对齐。
+
+Yes
 ```
-# Yes
 x = 1
 y = 2
 long_variable = 3
+```
 
-# No
+No
+```
 x             = 1
 y             = 2
 long_variable = 3
