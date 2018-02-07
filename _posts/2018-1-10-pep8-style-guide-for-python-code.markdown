@@ -196,11 +196,91 @@ import sys
 
 # 字符串引用
 
-### 1 Pet Peeves
+在Python中, 单引号字符串与双引号字符串是一样的。PEP并没有对此提出建议。选择一个规则并坚持下去。但是，当字符串中包含单引号或者双引号时，使用另外一种来避免使用反斜杆。它可提高可读性。
 
-### 2 其他建议
+对于三引号字符串，总是使用双引号来保持与PEP 257中的docstring约定一致。
 
 # 表达式和语句中的空白
+
+### 1 个人小怪癖
+
+在下列情况下避免多余的空白:
+
++ 括号，方括号，大括号内部紧接的地方。
+```
+# Yes
+spam(ham[1], {eggs: 2})
+
+# No
+spam( ham[ 1 ], { eggs: 2 } )
+```
+
++ 介于尾随逗号和右括号之间。
+```
+# Yes
+foo = (0,)
+
+# No
+bar = (0, )
+```
+
++ 紧接在逗号、分号或冒号之前。
+```
+# Yes
+if x == 4: print x, y; x, y = y, x
+
+# No
+if x == 4 : print x , y ; x , y = y , x
+```
+
++ 然而, 在分片中冒号的作用类似于二元操作符，并且逗号两边应该有相等的数量（将其作为具有最低优先级的操作符）.在扩展分片中，两个冒号都必须提供相同数量的空白。例外: 当一个分片参数省略，空白也应省略。
+```
+# Yes
+ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
+ham[lower:upper], ham[lower:upper:], ham[lower::step]
+ham[lower+offset : upper+offset]
+ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
+ham[lower + offset : upper + offset]
+
+# No
+ham[lower + offset:upper + offset]
+ham[1: 9], ham[1 :9], ham[1:9 :3]
+ham[lower : : upper]
+ham[ : upper]
+```
+
++ 紧接在开始函数调用的参数列表的左括号之前。
+```
+# Yes
+spam(1)
+
+# No
+spam (1)
+```
+
++ 紧接在开始索引或切片的左括号之前。
+```
+# Yes
+dct['key'] = lst[index]
+
+# No
+dct ['key'] = lst [index]
+```
+
++ 在赋值(或其他)运算符周围有多个空白, 以使其与另一个运算符对齐。
+```
+# Yes
+x = 1
+y = 2
+long_variable = 3
+
+# No
+x             = 1
+y             = 2
+long_variable = 3
+```
+
+### 2 其他建议
 
 # 何时使用结尾逗号
 
